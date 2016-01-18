@@ -1,3 +1,22 @@
 body{
-  color: black;
+	font-size: 1.2em;
+}
+h1, h2, h3, h4{
+	font-weight: 600;
+}
+h2{
+	color: #C27CFF;
+	font-size: 1.7em;
+	padding: 40px 10px;
+}
+a{
+	text-decoration: none;
+	color: #1c4ba0;
+}
+a:hover{
+	color: #4769c4;
+}
+.logo{
+	width: 170px;
+	height: 170px;
 }
