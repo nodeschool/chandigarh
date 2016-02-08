@@ -1,34 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<title>NodeSchool Chandigarh</title>
-		<link rel="stylesheet" href="./css/grid.css" />
-		<link rel="stylesheet" href="./css/style.css" />
+		<meta charset="utf-8">
+		<title>Chandigarh | NodeSchool.io</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+		<link href="assets/css/bootstrap.css" rel="stylesheet">
+		<link href="assets/css/style.css" rel="stylesheet">
+		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 
 	</head>
-	<body>
-		<div class="grid">
-			<img class="wide-25 logo" src="./images/nodeschool-chd.png" /><br>
-			<h1 class="wide-50">NodeSchool Chandigarh</h1>
-			<h4 class="wide-50">(Website Under Construction)</h4>
-			<section class="wide-100">
-				<h2>Node.js</h2>
-				<p class="top-pad-1">
-					Node.js was created in 2009 by Ryan Dahl and different engineers working at Joyent. Node.js was initially released in 2009 supporting just Linux. Its advancement and maintenance was driven by Dahl and supported by Joyent, the firm where Dahl worked. Node.js is an open-source, cross-stage runtime environment for creating server-side web applications.
-				</p>
-				<p class="top-pad-1">
-					Node.js allows the formation of web servers and networking tools utilizing JavaScript and a gathering of "modules" that handle different cor functionality. Modules handle file system I/O, networking, binary information, cryptography functions, data streams[34] and other center functions.
-				</p>
-				<h2>About NodeSchool</h2>
-				<p class="top-pad-1">
-					NodeSchool is an open source project run by volunteers with two goals: to create high quality programming curriculum and to host community learning events. To learn more about NodeSchool please
-					<a href="http://nodeschool.io/"> Click Here</a>
-				</p>
-				
-			</section>
 
-			<p class="top-pad-1 clear"><a href="https://twitter.com/nodeschoolchd"> @nodeschoolchd</a></p>
-			<p>As part of our effort to ensure that everyone feels safe and welcome at our events, we ask that all participants follow our <a href="https://github.com/nodeschool/chandigarh/master/code-of-conduct.md">Code of Conduct</a>.</p>
+	<body data-spy="scroll" id="top">
+
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<img src="assets/images/logo_chd.png">
+				<div class="container"> 
+
+					<ul class="nav">
+						<li><a href="#fundamental" title="Fundamentals">Node fundamentals</a></li>
+						<li><a href="#menu2" title="Menu">Menu</a></li>
+					</ul>
+				</div>
+			</div>
 		</div>
+
+		<div class="container" id="welcome">
+
+			<div id="welcome-box">
+				<div class="page-header"><h1>Welcome to Node.js</h1></div>
+				<p>
+					Node.js is an open-source, cross-stage runtime environment for creating server-side web applications. Node.js was created in 2009 by Ryan Dahl and engineers worked in Joyent. It was initially released in 2009 supporting just Linux. It's advancement and maintenance was driven by Dahl and supported by Joyent.
+				</p>
+				<p>  
+					Node.js allows the formation of web servers and networking tools utilizing JavaScript and a gathering of "modules" that handle different cor functionality. Modules handle file system I/O, networking, binary information, cryptography functions, data streams and other center functions.
+				</p> 
+				
+				<p>Let's find out more</p>
+
+				<section id="fundamental">
+					<div class="page-header"><h1>Node Fundamentals</h1></div>
+					<h2>The modules of Node applications:</h2>
+					<h3>Callbacks:</h3>
+					<h4>The callbacks library consists of four universal functions:</h4>
+					<h5>Set timeout (callback, delay, [...]):</h5>
+					<p>
+						Schedule the execution of the given callback after postponement milliseconds. Gives back a timeout Id for conceivable use with clearTimeout(). Alternatively, you can also pass contentions to the callback.
+					</p>
+					<h5>Set Interval(callback, delay, [...]):</h5>
+					<p>
+						Schedule the rehashed execution of callback each deferral milliseconds. Gives back an interval Id for conceivable use with clearInterval(). Alternatively, you can also pass contentions to the callback.
+					</p>
+					<h5>ClearTimeout (timeout Id):</h5>
+					<p>
+						Prevents a timeout from activating.
+					</p>
+					<h5>ClearInterval (interval Id):</h5>
+					<p>
+						Stops an interval from activating.
+					</p>
+					<p>
+						These functions can be utilized to schedule callback for execution. The setTimeout function is helpful for performing housekeeping tasks, e.g. sparing the condition of the program to disk after a specific interval. Keep in mind that timeouts and intervals are just executed when the execution is gone back to the Node event circle, so timings are not inexorably accurate in the event that you have a long-running blocking task.
+					</p>
+					<h3>Events:</h3>
+					<p>
+						Event is a class which is utilized to give a predictable interface to activating and tying callbacks to events. It is utilized inside as a part of a large portion of the Node core libraries and gives a strong establishment to construct event based classes and applications.
+					</p>
+					<h4>To make a class which extends EventEmitter, you can use utils.inherit():</h4>
+					
+					<div class="node-window">
+						<img src="assets/images/circles.png">
+						<div class="hline">
+							<p>
+								var EventEmitter = require(‘events’).EventEmitter; <br />
+								var util = require(‘util’);<br /><br />
+								// create the class<br />
+								var MyClass = function () { ... }
+							</p>
+						</div>
+						<div class="vline"></div>
+					</div>
+					<div class="node-window">
+						<img src="assets/images/circles.png">
+						<div class="hline">
+							<p>
+								// augment the prototype using util.inherits <br />
+								util.inherits(MyClass, EventEmitter); <br />
+								MyClass.prototype.whatever = function() { ... }
+							</p>
+						</div>
+						<div class="vline"></div>
+					</div>
+					<p>
+						EventEmitters allow you to include listeners - callbacks - to any subjectively named event (with the exception of New Listener, which is special in EventEmitter). You can attach various callbacks to a solitary event. To include a listener, use:
+					</p>
+					<h4>EventEmitter.on(event, listener) or EventEmitter.addListener(event, listener)</h4>
+					<p>
+						ou can utilize Event Emitter. once(event, audience) to include a callback which will only be activated once, as opposed to each time the event happens. This is a decent practice, since you should keep the quantity of listeners to a minimum (indeed, on the off chance that you have more than 10 listeners, Event Emitter will warn you that you have to call emitter.setMaxListeners).
+					</p>
+					<h5>To trigger an event from your class, use EventEmitter.emit(event, [arg1], [arg2], [...]):</h5>
+					<div class="node-window">
+						<img src="assets/images/circles.png">
+						<div class="hline">
+							<p>
+								MyClass.prototype.whatever = function() {<br />
+								this.emit(‘someevent’, ‘Hello’, ‘World’); <br />};
+							</p>
+						</div>
+						<div class="vline"></div>
+					</div>
+					<p>
+						The transmit function takes a boundless number of arguments, and passes those on to the callback connected with the event. You can uproot event listeners utilizing EventEmitter.removeListener(event,) or EventEmitter.removeAllListeners(event), which evacuate either one listener, or all of listeners connected with a specific event.
+					</p>
+				</section>
+
+				<hr />
+			</div>
+		</div>
+		<a href="#" class="btn btn-primary btn-large" target="_blank">Learn More</a>
+		<!--
+		<div class="node-window">
+						<img src="assets/images/circles.png">
+						<div class="hline">
+							<p>
+								MyClass.prototype.whatever = function() {
+this.emit(‘someevent’, ‘Hello’, ‘World’); };
+							</p>
+						</div>
+						<div class="vline"></div>
+					</div>
+		-->
+		<script src="assets/js/jquery-1.11.1.min.js"></script> 
+		<script src="assets/js/custom.js"></script>
+
 	</body>
 </html>
