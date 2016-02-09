@@ -18,122 +18,304 @@
 
 		<div class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
-				<img src="assets/images/logo_chd.png">
+				<a href="#"><img src="assets/images/logo_chd.png"></a>
 				<div class="container"> 
 
 					<ul class="nav">
 						<li><a href="#fundamental" title="Fundamentals">Node fundamentals</a></li>
-						<li><a href="#menu2" title="Updating">Still Updating</a></li>
+						<li><a href="#error" title="Error Handling">Error Handling</a></li>
+						<li><a href="#debugging" title="Debugging">Debugging with Node Inspector</a></li>
+						<li><a href="#real_app" title="Realtime application">Realtime application</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
-
-		<div class="container" id="welcome">
-
-			<div id="welcome-box">
-				<div class="page-header"><h1>Welcome to Node.js</h1></div>
-				<p>
-					Node.js is an open-source, cross-stage runtime environment for creating server-side web applications. Node.js was created in 2009 by Ryan Dahl and engineers worked in Joyent. It was initially released in 2009 supporting just Linux. It's advancement and maintenance was driven by Dahl and supported by Joyent.
-				</p>
-				<p>  
-					Node.js allows the formation of web servers and networking tools utilizing JavaScript and a gathering of "modules" that handle different cor functionality. Modules handle file system I/O, networking, binary information, cryptography functions, data streams and other center functions.
-				</p> 
-				
-				<p>Let's find out more</p>
-
-				<section id="fundamental">
-					<div class="page-header"><h1>Node Fundamentals</h1></div>
-					<h2>The modules of Node applications:</h2>
-					<h3>Callbacks:</h3>
-					<h4>The callbacks library consists of four universal functions:</h4>
-					<h5>Set timeout (callback, delay, [...]):</h5>
+		<img class="head-img" src="assets/images/node_chd.jpg">
+		<div class="container main-area">
+			
+			<section id="welcome"></section>
+			<div class="page-header"><h1>Welcome to Node.js</h1></div>
+			<p>
+				Node.js is an open-source, cross-stage runtime environment for creating server-side web applications. Node.js was created in 2009 by Ryan Dahl and engineers worked in Joyent. It was initially released in 2009 supporting just Linux. It's advancement and maintenance was driven by Dahl and supported by Joyent.
+			</p>
+			<p>  
+				Node.js allows the formation of web servers and networking tools utilizing JavaScript and a gathering of "modules" that handle different cor functionality. Modules handle file system I/O, networking, binary information, cryptography functions, data streams and other center functions.
+			</p> 
+			<p>Let's find out more</p><hr />
+			
+			<section id="fundamental"></section>
+			<div class="page-header"><h1>Node Fundamentals</h1></div>
+			<h2>The modules of Node applications:</h2>
+			<h3>Callbacks:</h3>
+			<h4>The callbacks library consists of four universal functions:</h4>
+			<h5>Set timeout (callback, delay, [...]):</h5>
+			<p>
+				Schedule the execution of the given callback after postponement milliseconds. Gives back a timeout Id for conceivable use with clearTimeout(). Alternatively, you can also pass contentions to the callback.
+			</p>
+			<h5>Set Interval(callback, delay, [...]):</h5>
+			<p>
+				Schedule the rehashed execution of callback each deferral milliseconds. Gives back an interval Id for conceivable use with clearInterval(). Alternatively, you can also pass contentions to the callback.
+			</p>
+			<h5>ClearTimeout (timeout Id):</h5>
+			<p>
+				Prevents a timeout from activating.
+			</p>
+			<h5>ClearInterval (interval Id):</h5>
+			<p>
+				Stops an interval from activating.
+			</p>
+			<p>
+				These functions can be utilized to schedule callback for execution. The setTimeout function is helpful for performing housekeeping tasks, e.g. sparing the condition of the program to disk after a specific interval. Keep in mind that timeouts and intervals are just executed when the execution is gone back to the Node event circle, so timings are not inexorably accurate in the event that you have a long-running blocking task.
+			</p>
+			<h3>Events:</h3>
+			<p>
+				Event is a class which is utilized to give a predictable interface to activating and tying callbacks to events. It is utilized inside as a part of a large portion of the Node core libraries and gives a strong establishment to construct event based classes and applications.
+			</p>
+			<h4>To make a class which extends EventEmitter, you can use utils.inherit():</h4>
+			
+			<div class="node-window">
+				<img src="assets/images/circles.png">
+				<div class="hline">
 					<p>
-						Schedule the execution of the given callback after postponement milliseconds. Gives back a timeout Id for conceivable use with clearTimeout(). Alternatively, you can also pass contentions to the callback.
+						var EventEmitter = require(‘events’).EventEmitter; <br />
+						var util = require(‘util’);<br /><br />
+						// create the class<br />
+						var MyClass = function () { ... }
 					</p>
-					<h5>Set Interval(callback, delay, [...]):</h5>
-					<p>
-						Schedule the rehashed execution of callback each deferral milliseconds. Gives back an interval Id for conceivable use with clearInterval(). Alternatively, you can also pass contentions to the callback.
-					</p>
-					<h5>ClearTimeout (timeout Id):</h5>
-					<p>
-						Prevents a timeout from activating.
-					</p>
-					<h5>ClearInterval (interval Id):</h5>
-					<p>
-						Stops an interval from activating.
-					</p>
-					<p>
-						These functions can be utilized to schedule callback for execution. The setTimeout function is helpful for performing housekeeping tasks, e.g. sparing the condition of the program to disk after a specific interval. Keep in mind that timeouts and intervals are just executed when the execution is gone back to the Node event circle, so timings are not inexorably accurate in the event that you have a long-running blocking task.
-					</p>
-					<h3>Events:</h3>
-					<p>
-						Event is a class which is utilized to give a predictable interface to activating and tying callbacks to events. It is utilized inside as a part of a large portion of the Node core libraries and gives a strong establishment to construct event based classes and applications.
-					</p>
-					<h4>To make a class which extends EventEmitter, you can use utils.inherit():</h4>
-					
-					<div class="node-window">
-						<img src="assets/images/circles.png">
-						<div class="hline">
-							<p>
-								var EventEmitter = require(‘events’).EventEmitter; <br />
-								var util = require(‘util’);<br /><br />
-								// create the class<br />
-								var MyClass = function () { ... }
-							</p>
-						</div>
-						<div class="vline"></div>
-					</div>
-					<div class="node-window">
-						<img src="assets/images/circles.png">
-						<div class="hline">
-							<p>
-								// augment the prototype using util.inherits <br />
-								util.inherits(MyClass, EventEmitter); <br />
-								MyClass.prototype.whatever = function() { ... }
-							</p>
-						</div>
-						<div class="vline"></div>
-					</div>
-					<p>
-						EventEmitters allow you to include listeners - callbacks - to any subjectively named event (with the exception of New Listener, which is special in EventEmitter). You can attach various callbacks to a solitary event. To include a listener, use:
-					</p>
-					<h4>EventEmitter.on(event, listener) or EventEmitter.addListener(event, listener)</h4>
-					<p>
-						ou can utilize Event Emitter. once(event, audience) to include a callback which will only be activated once, as opposed to each time the event happens. This is a decent practice, since you should keep the quantity of listeners to a minimum (indeed, on the off chance that you have more than 10 listeners, Event Emitter will warn you that you have to call emitter.setMaxListeners).
-					</p>
-					<h5>To trigger an event from your class, use EventEmitter.emit(event, [arg1], [arg2], [...]):</h5>
-					<div class="node-window">
-						<img src="assets/images/circles.png">
-						<div class="hline">
-							<p>
-								MyClass.prototype.whatever = function() {<br />
-								this.emit(‘someevent’, ‘Hello’, ‘World’); <br />};
-							</p>
-						</div>
-						<div class="vline"></div>
-					</div>
-					<p>
-						The transmit function takes a boundless number of arguments, and passes those on to the callback connected with the event. You can uproot event listeners utilizing EventEmitter.removeListener(event,) or EventEmitter.removeAllListeners(event), which evacuate either one listener, or all of listeners connected with a specific event.
-					</p>
-				</section>
-
-				<hr />
+				</div>
+				<div class="vline"></div>
 			</div>
-		</div>
-		<a href="#" class="btn btn-primary btn-large" target="_blank">Learn More</a>
-		<!--
-		<div class="node-window">
-						<img src="assets/images/circles.png">
-						<div class="hline">
-							<p>
-								MyClass.prototype.whatever = function() {
-this.emit(‘someevent’, ‘Hello’, ‘World’); };
-							</p>
-						</div>
-						<div class="vline"></div>
-					</div>
-		-->
+			<div class="node-window">
+				<img src="assets/images/circles.png">
+				<div class="hline">
+					<p>
+						// augment the prototype using util.inherits <br />
+						util.inherits(MyClass, EventEmitter); <br />
+						MyClass.prototype.whatever = function() { ... }
+					</p>
+				</div>
+				<div class="vline"></div>
+			</div>
+			<p>
+				EventEmitters allow you to include listeners - callbacks - to any subjectively named event (with the exception of New Listener, which is special in EventEmitter). You can attach various callbacks to a solitary event. To include a listener, use:
+			</p>
+			<h4>EventEmitter.on(event, listener) or EventEmitter.addListener(event, listener)</h4>
+			<p>
+				You can utilize Event Emitter. once(event, audience) to include a callback which will only be activated once, as opposed to each time the event happens. This is a decent practice, since you should keep the quantity of listeners to a minimum (indeed, on the off chance that you have more than 10 listeners, Event Emitter will warn you that you have to call emitter.setMaxListeners).
+			</p>
+			<h5>To trigger an event from your class, use EventEmitter.emit(event, [arg1], [arg2], [...]):</h5>
+			<div class="node-window">
+				<img src="assets/images/circles.png">
+				<div class="hline">
+					<p>
+						MyClass.prototype.whatever = function() {<br />
+						this.emit(‘someevent’, ‘Hello’, ‘World’); <br />};
+					</p>
+				</div>
+				<div class="vline"></div>
+			</div>
+			<p>
+				The transmit function takes a boundless number of arguments, and passes those on to the callback connected with the event. You can uproot event listeners utilizing EventEmitter.removeListener(event,) or EventEmitter.removeAllListeners(event), which evacuate either one listener, or all of listeners connected with a specific event.
+			</p>
+			<h3>Streams:</h3>
+			<p>
+				However, in most cases we just need to read or write through the data once, and in one bearing (forward). Streams are a deliberation over mostly buffered data get to that rearrange doing this sort of data preparing. Streams return littler parts of the data and trigger a callback when new data is accessible for handling.
+			</p>
+			<p>
+				The Node stream interface comprises of two sections: Readable streams and Writable streams.
+			</p>
+			<h4>Readable Streams:</h4>
+			<p>
+				Files fs.createReadStream(path, [options]): Returns a new ReadStream object.<br />
+				HTTP (Server) http.ServerRequest: The request object passed while preparing the solicitation callback for HTTP servers.<br />
+				HTTP (Client) http.ClientResponse: The request object passed while preparing the solicitation callback for HTTP client request.<br />
+				Child process child.stdout: The stdout pipe for child processes dispatched from Node.js <br />Child process child.stderr: The stderr pipe for child processes dispatched from Node.js<br />
+				Process process.stdin: A Readable Stream for stdin. <br />The stdin stream is stopped by default, so one must call process.stdin.resume() to read from it.
+			</p>
+			<h4>Writable Streams:</h4>
+			<p>
+				Event: ’drain’: After a write() method returned false, this event is transmitted to show that it is safe to write once more.
+			</p>
+			<p>
+				Event: ’error’: Emitted on error with the exception.
+			</p>
+			<p>
+				Streams are an optional method for getting to data from different sources, for example, the system (TCP/UDP), documents, child forms and user data. In doing I/O, Node offers us different alternatives for accessing the data:
+			</p>
+			<h5>Fully Buffered Access:</h5>
+			<p>
+				Completely buffered function calls like readFileSync() and readFile() uncover the data as one major blob. That is, perusing is performed and afterward the full arrangement of data is returned either in synchronous or asynchronous style.
+			</p>
+			<p>
+				// Fully buffered access [100 Mb file]<br /><br />
+				[allocate 100 Mb buffer]<br />
+				[read and return 100 Mb buffer]<br />
+			</p>
+			<h5>Partially Buffered Access:</h5>
+			<p>
+				Partially Buffered access routines are different. They don't treat information data as a discrete event, but instead as a series of events which happen as the data is being read or written. They permit us to get to information as it is being perused from disk, network or other I/O.
+			</p>
+			<p>
+				// Streams (and partially buffered reads) [100 Mb file]<br /><br />
+				[allocate small buffer]<br />
+				[read and return small buffer]<br />
+				[repeat 1&amp;2 until done]<br />
+			</p>
+			<hr />
+
+			<section id="error"></section>
+			<div class="page-header"><h1>Error Handling</h1></div>
+			<p>
+				When you're composing a new function, You should know how do you convey errors to the code that called your function? The most imperative thing to do is document what your function does, including what contentions it takes, what it returns, what errors can happen, and what those errors mean. In the event that you don't know what errors can happen or don't recognize what they mean, then your project can't be correct with the exception of unintentionally. So in case you're composing a new function, you need to tell your callers what errors can happen and what they mean.
+			</p>
+			<p>
+				There are three basic examples for a function to convey errors.
+			</p>
+			<ul>
+				<li>
+					Callbacks are the most essential method for conveying an function asynchronously. The client passes you a function, and you conjure it at sometime later when the asynchronously operation finishes. The typical example is that the callback is invoked as callback(err, result), where stand out of error and result is non-invalid, contingent upon whether the operation succeeded or failed.
+				</li>
+				<li>
+					Throw conveys a error synchronously is, in the same setting where the function was called. On the off chance that the caller utilized try or catch, then they can get the error. If none of the callers did, the program for the most part crashes.
+				</li>
+				<li>
+					For more complicated cases, rather than using a callback, the function itself can give back an EventEmitter item, and the caller would be relied upon to listen for error events on the emitter. When you're doing an entangled operation that might produce different errors or various results. For this situation, rather than taking a callback, your function would return an EventEmitter and discharge row events for every result.
+				</li>
+			</ul>
+
+			<hr />
+			<section id="debugging"></section>
+			<div class="page-header"><h1>Debugging with Node Inspector</h1></div>
+			<p>
+				While Node has an inherent debugger, Node Inspector gives a pleasant graphical interface to debugging node programs. Node Inspector is a debugger interface for node.js utilizing the WebKit Web Inspector, the well known java script debugger. There is an exceptionally decent project that let you utilize the Chrome DevTools with a node module keeping in mind the end goal to have the capable troubleshooting choices web designers got inside Chrome.
+			</p>
+			<p>
+				Think on the capacity to set a breakpoint and later going into functions and analyze variables, objects on the fly. Everything you need to install is NodeJS and since nowadays, NodeJS is accompanying npm (=managing NodeJS modules) it's one line of typing after you have node so as to install this module: node-inspector.
+			</p>
+			<p>
+				Install with npm-
+			</p>
+			<div class="node-window">
+				<img src="assets/images/circles.png">
+				<div class="hline">
+					<p>
+						npm install -g node-inspector
+					</p>
+				</div>
+				<div class="vline"></div>
+			</div>
+			<p>
+				To utilize node-inspector, enable debugging on the node you wish to troubleshoot. You can either begin node with a debug flag like:
+			</p>
+			<div class="node-window">
+				<img src="assets/images/circles.png">
+				<div class="hline">
+					<p>
+						node --debug program.js
+					</p>
+				</div>
+				<div class="vline"></div>
+			</div>
+			<p>Debugging</p>
+			<ol>
+				<li>Start the inspector. You can put $ node-inspector &amp; in background </li>
+				<li>Open your http link with /debug?port= in your webkit based browser.</li>
+				<li>Check the javascript source from node.</li>
+				<li>Select a script and set some breakpoints (far left line numbers) or essentially include a debugger bring in your code.</li>
+				<li>At that point watch the marginally outdated screencasts.</li>
+			</ol>
+			<p>
+				Node-inspector works precisely like the web inspector in Safari and Chrome.
+			</p>
+			
+			<hr />
+			<section id="real_app"></section>
+			<div class="page-header"><h1>Create a realtime application</h1></div>
+			<h2>with Express and Socket.io</h2>
+			<p>
+				There are a several new fancy web applications out there that are utilizing real-time functionality. You can see samples of this used to great impact in Google Docs' multi-client editing, and the way all the online networking sites update you of what is happening in real-time.
+			</p>
+			<h3>We are building a helpdesk ticket system. Which works more or less the same way of chat applications.</h3>
+			<p>
+				To start with we have to make the project folder, add a server folder to that, and after that make the package.json document for our server module.
+			</p>
+			<div class="node-window">
+				<img src="assets/images/circles.png">
+				<div class="hline">
+					<p>
+						// Package.json <br />{<br />	
+						name: 'helpdesk-ticketer-server',<br />
+						description: 'The server code for helpdesk ticketing system'<br /> }
+					</p>
+				</div>
+				<div class="vline"></div>
+			</div>
+			<p>At that point we simply need to include our conditions utilizing NPM.</p>
+			<div class="node-window">
+				<img src="assets/images/circles.png">
+				<div class="hline">
+					<p>
+						npm install --save express socket.io
+					</p>
+				</div>
+				<div class="vline"></div>
+			</div>
+			<p>Next we'll add an app.js document to the server directory, and make an essential express application.</p>
+			<div class="node-window">
+				<img src="assets/images/circles.png">
+				<div class="hline">
+					<p>
+						var express = require(express);<br />
+						var socketio = require('socket.io');<br />
+						var app = express();
+					</p>
+				</div>
+				<div class="vline"></div>
+			</div>
+			<div class="node-window">
+				<img src="assets/images/circles.png">
+				<div class="hline">
+					<p>
+						var io = socketio.listen(app.listen(3000));<br />
+						io.sockets.on('connection', function (socket)<br /> {<br />
+						console.log('A user has connected');<br /> });
+					</p>
+				</div>
+				<div class="vline"></div>
+			</div>
+
+			<p>Here we are telling both express, and socket.io to listen to asks for made at port 3000.</p>
+			<p>
+				We're going to utilize ember-cli to set up the customer code, so in the root catalog of our project, run ember new customer and ember-cli will simply ahead and make the greater part of the important standard code for us. Once this is done, I need to uproot the greater part of the un-essential folders from the customer dictionary. In this application we will be utilizing the Pod Structure, as this seems to be, as I would see it, a superior approach to lay out your records. Next we'll include the socket io customer as a reliance utilizing bower and update our brocfile.js so it is imported into our seller record on build.
+			</p>
+			<p>
+				We'll make an Ember Service to handle the connection to socket.io and also discharging events. Thusly we can have a singleton object that holds the web socket we are joined with that endures for the life of the application, or until the client unequivocally disconnect. Make a document called helpdesk.js in the application, service or directory. Next we'll make a system on this service that handles submitted a ticket to the server by a socket.io event.
+			</p>
+			<p>
+				You have seen the connection logic some time recently, however we have also included a listener as socket.on() here we go in the same of the event that we indicated back on the customer. Any information that is gone into the event from the customer is additionally accessible here in the callback event. Inside this callback it might be a smart thought to control the information anyway you require. Imperatively, we are calling socket.broadcast.emit(), giving the event a name and passing the ticket once again into it. We have to handle this on our customer.
+			</p>
+			<p>
+				At the point when the controller is introduced we're setting up a listener with socket.on which is listening for the ticket-submitted event from the server, the callback will be passed the ticket which we are essentially adding to the tickets array, in this manner updating our perspective in real time. Run our application with ember server from the command line and explore to http://localhost:3000.
+			</p>
+			<p>
+				Submit a ticket using the structure and it will be added to the list of tickets immediately. Do this with two separate program windows open and you ought to see both browsers update in real time.
+			</p>
+			<p>
+				While this is a basic example, hopefully you have got some good thoughts in your mind now about how this technology can be utilized to enormously enhance the responsiveness of your own projects.
+			</p>
+
+
+
+			<hr />
+			<div class="footer">
+				Follow us on Twitter: <a href="https://twitter.com/nodeschoolchd"> @nodeschoolchd</a>
+				<p>
+					As part of our effort to ensure that everyone feels safe and welcome at our events, we ask that all participants follow our <a href="https://github.com/nodeschool/chandigarh/master/code-of-conduct.md">Code of Conduct</a>
+				</p>
+			</div>
+
+		</div> <!--end of main-area-->
+		
 		<script src="assets/js/jquery-1.11.1.min.js"></script> 
 		<script src="assets/js/custom.js"></script>
 
