@@ -1,5 +1,5 @@
-# Chandigarh
-### **NodeSchool Chandigarh**
+# NodeSchool Chapter
+### **Chandigarh**
 
 * Organizers: NSENA ([@nodeschoolchd](https://twitter.com/nodeschoolchd))
 * Meetup Link: [Chandigarh](http://nodeschool.io/chandigarh/)
