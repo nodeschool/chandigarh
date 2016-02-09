@@ -28,7 +28,7 @@ please contact an organizer immediately.
 ### **NodeSchool Chandigarh**
 
 * Organizers: NSENA ([@nodeschoolchd](https://twitter.com/nodeschoolchd))
-* Meetup URL: http://nodeschool.io/chandigarh/
+* Meetup URL: ([Chandigarh](http://nodeschool.io/chandigarh/))
 
 **If you have questions or feedback about this Code of Conduct please contact
 one of the organizers.**
